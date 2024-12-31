@@ -1,159 +1,41 @@
-<h1 align="center">💦 پنل BPB</h1>
+## Cloudflare-workers/pages代理脚本
 
-#### 🌏 [English](README.md)
+### 方案一支持workers部署：实现vless+ws+tls与vless+ws两种代理节点
 
-<p align="center">
-  <img src="docs/assets/images/Panel.jpg">
-</p>
-<br>
+### 方案二支持pages部署：仅实现vless+ws+tls代理节点
 
-## معرفی
+### 详细说明教程请参考[甬哥博客及视频教程](https://ygkkk.blogspot.com/2023/07/cfworkers-vless.html)
+--------------------------------
+### CF vless代码默认修改内容
 
-این پروژه توسعه‌ی یک پنل کاربری برای اسکریپت <a href="https://github.com/yonggekkk/Cloudflare-workers-pages-vless">پروکسی Cloudflare-workers/pages</a> ایجاد شده توسط <a href="https://github.com/yonggekkk">yonggekkk</a> می‌باشد.
+1、UUID必须自定义
 
-### این پنل به دو روش راه‌اندازی می‌شود:
+2、proxyIP已更新支持chatgpt的IP，可直接使用（使用人数过多，不定时失效），可自定义
 
-- راه‌اندازی با **Cloudflare Worker**
-- راه‌اندازی با **Cloudflare Worker**
-<br>
+3、伪装网页已更新为微软www.bing.com，可自定义
 
-🌟 اگر پروژه‌ی **BPB Panel** براتون مفید بوده، حمایت شما مایه‌ی دلگرمی من هست 🌟
-<ul dir="rtl">
-  <li><code>0x111EFF917E7cf4b0BfC99Edffd8F1AbC2b23d158</code> <strong>:USDT (BEP20)</strong></li>
-</ul>
+4、重点对workers与pages、有域名与无域名，这4种情况下的节点分享做了优化显示，方便小白们理解操作
 
-## ویژگی‌ها
-<br>
-<ol dir="rtl">
-  <li><strong>رایگان</strong></li>
-  <li><strong>پنل کاربری راحت:</strong> قابلیت آسان تنظیمات و دریافت کانفیگ ها و لینک های اشتراک.</li>
-  <li><strong>پروتکل‌های متنوع:</strong> ارائه کانفیگ‌های VLESS، Trojan و Warp.</li>
-  <li><strong>سابسکریپشن Warp Pro: </strong>ارائه‌ی کانفیگ‌های وارپ بهینه شده برای شرایط همیشه خاص ایران</li>
-  <li><strong>پشتیبانی از فرگمنت:</strong> قابل استفاده حتی در صورت فیلتر شدن دامنه.</li>
-  <li><strong>قوانین مسیریابی کامل:</strong> شامل دور زدن سایت‌های ایرانی و چینی، روسی و دسترسی مستقیم به LAN، مسدودسازی تبلیغات ایرانی و خارجی و پورن و پروتکل QUIC</li>
-  <li><strong>زنجیره‌ی Proxy:</strong> قابلیت اضافه کردن Proxy خروجی جهت تثبیت IP.</li>
-  <li><strong>پشتیبانی از طیف وسیعی از برنامه‌ها:</strong> لینک‌های اشتراک را برای انواع نرم افزار ها با هسته‌های Xray و Sing-box و Clash ارائه میدهد.</li>
-  <li><strong>پنل با رمز عبور محافظت شده:</strong> ایمن‌سازی پنل با استفاده از رمز عبور.</li>
-  <li><strong>سفارشی‌سازی کامل تنظیمات:</strong> قابلیت اسکن و تنظیم IP تمیز، Proxy IP، DNS سرورها، پورت‌ها، پروتکل‌ها و Warp endpoint و ...</li>
-</ol>
-<br><br>
+---------------------------------
+### CF-CDN优选域名一键脚本，苹果安卓手机平板专用，(请参考教程，在本地网络环境下运行)：
+```
+curl -sSL https://gitlab.com/rwkgyg/CFwarp/raw/main/point/CFcdnym.sh -o CFcdnym.sh && chmod +x CFcdnym.sh && bash CFcdnym.sh
+```
+------------------------------------------------------------------------
+### CF-优选反代IP一键脚本，苹果安卓手机平板专用，(请参考教程，在本地网络环境下运行)：
+```
+curl -sSL https://gitlab.com/rwkgyg/CFwarp/raw/main/point/cfip.sh -o cfip.sh && chmod +x cfip.sh && bash cfip.sh
+```
 
-## نحوه‌ی راه‌اندازی، تنظیمات و استفاده
-- [روش جدید پیشنهادی نصب به صورت Pages](docs/pages_upload_installation_fa.md)
-- [نصب به صورت Pages](docs/pages_installation_fa.md)
-- [نصب به صورت Workers](docs/worker_installation_fa.md)
-- [نحوه استفاده از پنل](docs/configuration_fa.md)
-- [پرسش‌های متداول (FAQ)](docs/faq.md)
-<br>
+-------------------------------------------------------------
+### 感谢你右上角的star🌟
+[![Stargazers over time](https://starchart.cc/yonggekkk/Cloudflare-workers-pages-vless.svg)](https://starchart.cc/yonggekkk/Cloudflare-workers-pages-vless)
+------------------------------------------------------------------------
+### 感谢：CF-vless代码作者[3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel) CF优选IP程序作者[badafans](https://github.com/badafans/Cloudflare-IP-SpeedTest)、[XIU2](https://github.com/XIU2/CloudflareSpeedTest)
 
-## برنامه‌های پشتیبانی شده
-<div dir="rtl">
-<table>
-  <thead>
-    <th>برنامه</th>
-    <th>نسخه</th>
-    <th>Fragment</th>
-    <th>Warp Pro</th>
-  </thead>
-  <tbody  align="center">
-    <tr>
-      <td><b>v2rayNG</b></td>
-      <td>1.8.19 و بالاتر</td>
-      <td>✔️</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td><b>v2rayN</b></td>
-      <td>6.42 و بالاتر</td>
-      <td>✔️</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td><b>v2rayN-Pro</b></td>
-      <td>1.4 و بالاتر</td>
-      <td>✔️</td>
-      <td>✔️</td>
-    </tr>
-    <tr>
-      <td><b>Nekobox</b></td>
-      <td></td>
-      <td>❌</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td><b>Sing-box</b></td>
-      <td>1.10.1 و بالاتر</td>
-      <td>❌</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td><b>Streisand</b></td>
-      <td></td>
-      <td>✔️</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td><b>V2Box</b></td>
-      <td></td>
-      <td>❌</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td><b>Shadowrocket</b></td>
-      <td></td>
-      <td>❌</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td><b>Nekoray</b></td>
-      <td></td>
-      <td>✔️</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td><b>Hiddify</b></td>
-      <td>2.0.5 و بالاتر</td>
-      <td>❌</td>
-      <td>✔️</td>
-    </tr>
-    <tr>
-      <td><b>NikaNG</b></td>
-      <td></td>
-      <td>✔️</td>
-      <td>✔️</td>
-    </tr>
-    <tr>
-      <td><b>Clash Meta</b></td>
-      <td></td>
-      <td>❌</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td><b>Clash Verg Rev</b></td>
-      <td></td>
-      <td>❌</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td><b>FLClash</b></td>
-      <td></td>
-      <td>❌</td>
-      <td>❌</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+---------------------------------------
+#### 声明：
 
----
-## تعداد ستاره‌ها به مرور زمان
+#### 其中一键脚本使用base64加密，可自行解密，介意者请勿使用，[加密原因在此](https://ygkkk.blogspot.com/2022/06/github.html)
 
-[![تعداد ستاره‌ها به مرور زمان](https://starchart.cc/bia-pain-bache/BPB-Worker-Panel.svg?variant=adaptive)](https://starchart.cc/bia-pain-bache/BPB-Worker-Panel)
-
----
-### تشکر ویژه
-
-- نویسنده کد CF-vless <a href="https://github.com/3Kmfi6HP/EDtunnel">3Kmfi6HP</a>
-- نویسنده برنامه IP ترجیحی CF <a href="https://github.com/badafans/Cloudflare-IP-SpeedTest">badafans</a>، <a href="https://github.com/XIU2/CloudflareSpeedTest">XIU2</a>
-
----
-برای آموزش جزئیات اسکریپت اصلی، لطفاً به <a href="https://ygkkk.blogspot.com/2023/07/cfworkers-vless.html">وبلاگ و آموزش‌های ویدیویی Yongge</a> مراجعه کنید.
+#### 所有代码来源于Github社区与ChatGPT的整合；如您需要开源代码，请提Issues留下您的联系邮箱
